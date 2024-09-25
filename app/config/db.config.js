@@ -23,6 +23,7 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.Autor = require('../models/autores.js')(sequelize, Sequelize);    
+db.Autor = require('../models/autores.js')(sequelize, Sequelize);
+db.Persona = require('../models/persona.js')(sequelize, Sequelize);
   
 module.exports = db;
