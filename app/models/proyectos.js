@@ -10,12 +10,13 @@ module.exports = (sequelize, Sequelize) => {
         allowNull: false
       },
       descripcion: {
-        type: Sequelize.TEXT,
+        type: Sequelize.STRING,
         allowNull: true
       },
       fecha_creacion: {
         type: Sequelize.DATE,
-        allowNull: false
+        allowNull: false,
+        defaultValue: Sequelize.NOW
       }
     });
   

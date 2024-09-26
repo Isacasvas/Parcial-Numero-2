@@ -19,7 +19,8 @@ module.exports = (sequelize, Sequelize) => {
       },
       fecha_creacion:{
         type: Sequelize.DATE,
-        allowNull: true
+        allowNull: true,
+        defaultValue: Sequelize.NOW
       }
     });
   
