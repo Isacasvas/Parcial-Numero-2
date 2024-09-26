@@ -71,17 +71,3 @@ exports.delete = async (req, res) => {
     });
   }
 };
-
-exports.deleteAll = async (req, res) => {
-  try {
-    const deleted = await Tarea.destroy({
-      where: {},
-      truncate: false
-    });
-    res.send({ message: `${deleted} tareas fueron eliminadas con éxito.` });
-  } catch (err) {
-    res.status(500).send({
-      message: err.message || "Ocurrió un error al eliminar todas las tareas."
-    });
-  }
-};

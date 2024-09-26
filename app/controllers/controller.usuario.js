@@ -79,16 +79,3 @@ exports.delete = async (req, res) => {
   }
 };
 
-exports.deleteAll = async (req, res) => {
-  try {
-    const deleted = await Usuario.destroy({
-      where: {},
-      truncate: false
-    });
-    res.send({ message: `${deleted} Usuarios fueron eliminados con éxito.` });
-  } catch (err) {
-    res.status(500).send({
-      message: err.message || "Ocurrió un error al eliminar todos los Usuarios."
-    });
-  }
-};

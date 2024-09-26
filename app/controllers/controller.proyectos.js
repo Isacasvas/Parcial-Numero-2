@@ -70,17 +70,3 @@ exports.delete = async (req, res) => {
     });
   }
 };
-
-exports.deleteAll = async (req, res) => {
-  try {
-    const deleted = await Proyecto.destroy({
-      where: {},
-      truncate: false
-    });
-    res.send({ message: `${deleted} proyectos fueron eliminados con éxito.` });
-  } catch (err) {
-    res.status(500).send({
-      message: err.message || "Ocurrió un error al eliminar todos los proyectos."
-    });
-  }
-};
