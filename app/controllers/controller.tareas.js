@@ -58,16 +58,16 @@ exports.delete = async (req, res) => {
     });
     if (deleted) {
       res.send({
-        message: "La tarea fue eliminada con éxito."
+        message: "La tarea se elimino corectamente."
       });
     } else {
       res.status(404).send({
-        message: `No se encontró la tarea con id=${id}.`
+        message: `No se encontro tarea con id=${id}.`
       });
     }
   } catch (err) {
     res.status(500).send({
-      message: `No se pudo eliminar la tarea con id=${id}.`
+      message: `No se pudo eliminar bro con id=${id}.`
     });
   }
 };
