@@ -1,24 +1,28 @@
 const express = require('express');
 const router = express.Router();
-const usuariosController= require('../controllers/controller.usuario.js');
-const tareaController= require('../controllers/controller.tareas.js');
-const proyectoController = require('../controllers/controller.proyectos.js');
+const miembrosController = require('../controllers/controller.member.js');
+const autoresController = require('../controllers/controller.autores.js');
+const librosController = require('../controllers/controller.libros.js');
 
-router.post('/usuarios/create', usuariosController.create);
-router.get('/usuarios', usuariosController.findAll);
-router.put('/usuarios/:id', usuariosController.update);
-router.delete('/usuarios/:id', usuariosController.delete);
+//miembros
+router.post('/miembros/create', miembrosController.create);
+router.get('/miembros', miembrosController.retrieveAllMembers);
+router.get('/miembros/:id', miembrosController.getMiembroById);
+router.put('/miembros/:id', miembrosController.updateById);
+router.delete('/miembros/:id', miembrosController.deleteById);
 
-router.post('/tareas/create', tareaController.create);
-router.get('/tareas', tareaController.findAll);
-router.put('/tareas/:id', tareaController.update);
-router.delete('/tareas/:id', tareaController.delete);
+//autores
+router.post('/autores/create', autoresController.create);
+router.get('/autores', autoresController.retrieveAllAutores);
+router.get('/autores/:id', autoresController.getAutorById);
+router.put('/autores/:id', autoresController.updateById);
+router.delete('/autores/:id', autoresController.deleteById);
 
-router.post('/proyectos/create', proyectoController.create);
-router.get('/proyectos', proyectoController.findAll);
-router.put('/proyectos/:id', proyectoController.update);
-router.delete('/proyectos/:id', proyectoController.delete);
-
-
+//libros
+router.post('/libros/create', librosController.create);
+router.get('/libros', librosController.retrieveAllLibros);
+router.get('/libros/:id', librosController.getLibroById);
+router.put('/libros/:id', librosController.updateById);
+router.delete('/libros/:id', librosController.deleteById);
 
 module.exports = router;
